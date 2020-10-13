@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jjack\\source\\repos\\Hello World\\Hello World.csproj",
+      "projectUniqueName": "C:\\Development\\AHBC_DOTNET_Q4_2020_Examples\\Hello World\\Hello World.csproj",
       "projectName": "Hello World",
-      "projectPath": "C:\\Users\\jjack\\source\\repos\\Hello World\\Hello World.csproj",
+      "projectPath": "C:\\Development\\AHBC_DOTNET_Q4_2020_Examples\\Hello World\\Hello World.csproj",
       "packagesPath": "C:\\Users\\jjack\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jjack\\source\\repos\\Hello World\\obj\\",
+      "outputPath": "C:\\Development\\AHBC_DOTNET_Q4_2020_Examples\\Hello World\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

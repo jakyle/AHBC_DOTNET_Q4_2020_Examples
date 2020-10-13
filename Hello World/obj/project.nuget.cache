@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IdJ6HMOMEm3qQNfUmrk17f6+lC6PESPiCONd8BsAOPX9N8O08qzFin+BqQoXXbNyl6931qc4YCX0xp3MOMjoJg==",
+  "dgSpecHash": "/1IIGbP0PTUFOh3mX2uVCwzYJLEjo9wTMqD33P8RQIQ370lFt7pC0sPDbmZKnrm1Ll9dqvjaf1wNrXDYFpBZuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jjack\\source\\repos\\Hello World\\Hello World.csproj",
+  "projectFilePath": "C:\\Development\\AHBC_DOTNET_Q4_2020_Examples\\Hello World\\Hello World.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -48,7 +48,7 @@ namespace Hello_World
 
             // Math and stuff
 
-            double answer = (2 * 3) + 2*(5 * 12) / 2;
+            double answer = (2 * 3) + 2 * (5 * 12) / 2;
 
             Console.WriteLine($"our answer is: {answer}");
 
@@ -77,6 +77,64 @@ namespace Hello_World
             additionalAssignment %= modulus;
 
             Console.ReadLine();
+
+            // implicit Casting
+
+            int castingExample = 22;
+            double iJustCastedYou = castingExample;
+
+            // explicit casting
+            double doubleToInt = 22.4;
+            int castedDouble = (int)doubleToInt;
+
+            string castNumber = "22";
+            int castedFromString = int.Parse(castNumber);
+
+            // Intro to Conditionals, relational operators
+
+            int age = 21;
+
+            bool canDrink = age == 21;
+            bool canDrinkLessThan = age < 20;
+            bool canDrinkGreaterThan = age > 20;
+            bool canDrinkLessThanEqual = age <= 20; // < =
+            bool canDrinkGreaterThanEail = age >= 20; // > =
+            bool cannotDrink = age != 21;
+
+            // Logical Operators
+
+            bool hasLicense = true;
+
+            bool hasLicenseAndCanDrink = canDrink && hasLicense;
+            bool hasLIcenseOrCanDrink = canDrinkLessThan || hasLicense;
+            bool hasNoLicenseNotOfAge = !hasLicenseAndCanDrink;
+
+            // if statement
+
+            if (age == 21)
+            {
+                string onlyInThisScope = "I don't live very long :(";
+                Console.WriteLine(hasLicense);
+                Console.WriteLine("what do you want to drink my dude!");
+            }
+            else if (hasLIcenseOrCanDrink)
+            {
+                // Console.WriteLine(onlyInThisScope);
+                Console.WriteLine("eh, good enough, I guess, come on in.. drink, I don't care");
+            }
+            else if (hasNoLicenseNotOfAge)
+            {
+                //hin 
+            }
+            else // run code IF above is false
+            {
+                Console.WriteLine("You are not old enough to drink, scram kid!");
+            }
+
+            if (hasNoLicenseNotOfAge)
+            {
+                // do the things
+            }
 
         }
     }
