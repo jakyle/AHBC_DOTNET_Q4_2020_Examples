@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation-debugging-errorhandling", "Validation-debugging-errorhandling.csproj", "{55A8C133-6036-43B7-8BDE-F540599858F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55A8C133-6036-43B7-8BDE-F540599858F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A8C133-6036-43B7-8BDE-F540599858F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A8C133-6036-43B7-8BDE-F540599858F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A8C133-6036-43B7-8BDE-F540599858F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75B6F20D-AB7D-464D-A4B0-77C6A695B1AB}
+	EndGlobalSection
+EndGlobal
