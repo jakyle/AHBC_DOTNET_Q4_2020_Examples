@@ -77,7 +77,12 @@ namespace Validation_debugging_errorhandling
             string userInput = Console.ReadLine();
 
             // 2011-29-01
-            if (DateTime.TryParseExact(userInput, "yyyy-dd-MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime birthDate))
+            if (DateTime.TryParse(userInput, 
+                "yyyy-dd-MM", 
+                CultureInfo.InvariantCulture, 
+                DateTimeStyles.None, 
+                out DateTime birthDate)
+            )
             {
                 Console.WriteLine($"oh cool....{birthDate}");
             }
