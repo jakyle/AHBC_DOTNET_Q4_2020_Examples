@@ -43,6 +43,68 @@ namespace Arrayss
             int age = 13;
             bool isOldEnoughToDrink = IsOldEnoughToDrink(age);
 
+
+
+            // Reference Types
+
+            int[] refExample = new int[3] { 1, 2, 3 };
+
+            int[] otherRef = refExample;
+
+            int[] copyArray = new int[3];
+            for (int i = 0; i < refExample.Length; i++)
+            {
+                copyArray[i] = refExample[i];
+            }
+
+
+            otherRef[1] = 5;
+
+            Console.WriteLine(refExample[1]);
+
+            // two-dimensional arrays
+            // rectangular 2d array
+            int[,] matrix = new int[2,2];
+
+            int acc = 0;
+            for (int y = 0; y < matrix.GetLength(0); y++)
+            {
+                for (int x = 0; x < matrix.GetLength(1); x++)
+                {
+                    Console.WriteLine($"x: {x}, y: {y}");
+                    matrix[x, y] = acc;
+                    acc++;  
+                }
+            }
+
+
+            int[][] jaggedArray = new int[][]
+            {
+                new int[3] { 1, 2, 3},
+                new int[2] { 4, 5 },
+                new int[5] { 7, 8, 9, 10, 11}
+            };
+
+            acc = 0;
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.WriteLine($"i: {i}, j: {j}");
+                    jaggedArray[i][j] = acc;
+                    acc++;
+                }
+            }
+
+
+            // FOR EACH LOO,< WTF!!!
+            string[] subjects = new string[] { "math", "english", "gym", "biology"};
+
+            foreach (string subject in subjects) 
+            {
+                Console.WriteLine(subject);
+            }
+
             Console.ReadLine();
         }
     
