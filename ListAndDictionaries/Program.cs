@@ -77,23 +77,35 @@ namespace ListAndDictionaries
             // be of any type.  
             Dictionary<string, int> studentsAges = new Dictionary<string, int>();
 
+
+            // Assigning the dictionary a key and value at the same time!
+            // so in this instance, I'm assigning the KEY the VALUE 32
             studentsAges["Jerry"] = 32;
             studentsAges["Marc"] = 18;
 
+
+            // Here I am GETTING the data out of the dictionary!
             Console.WriteLine(studentsAges["Jerry"]);
 
             studentsAges["Jerry"] = 33;
             Console.WriteLine(studentsAges["Jerry"]);
 
+            // this is how you get a collection of ALL keys only
             var keys = studentsAges.Keys;
 
+            // this is us looping over each key
             foreach (var key in keys)
             {
                 Console.WriteLine(key);
             }
 
+            // this is how you can get a collection of all Values!
             var values = studentsAges.Values;
 
+
+            // this is the PREFERRED way to get a value out of a dictionary, always
+            // TRY to get the value in case the key+value does NOT exist inside of
+            // the dictionary!!!
             if (studentsAges.TryGetValue("Jerry", out int jerrysAge))
             {
                 Console.WriteLine($"Jerry's age: {jerrysAge}");
