@@ -148,16 +148,8 @@ namespace ListAndDictionaries
             var shouldContinueApp = true;
             while (shouldContinueApp)
             {
-                Console.Clear();
-                ListAllNames(people);
-                Console.WriteLine("------------------------------------------");
-                Console.WriteLine("Choose one of the options");
-                Console.WriteLine("[1] Add a name");
-                Console.WriteLine("[2] Modify a name");
-                Console.WriteLine("[3] Exit App");
-
+                PrintMenuAndNames(people);
                 var userMenuSelection = Console.ReadLine();
-
                 if (
                     uint.TryParse(userMenuSelection, out uint userSelection)
                     && userSelection < 4
@@ -191,8 +183,6 @@ namespace ListAndDictionaries
 
                 people.Sort();
             }
-
-
         }
 
 
@@ -229,6 +219,17 @@ namespace ListAndDictionaries
             {
                 Console.WriteLine("This Person does not exist in the list!");
             }
+        }
+
+        private static void PrintMenuAndNames(List<string> people)
+        {
+            Console.Clear();
+            ListAllNames(people);
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("Choose one of the options");
+            Console.WriteLine("[1] Add a name");
+            Console.WriteLine("[2] Modify a name");
+            Console.WriteLine("[3] Exit App");
         }
 
         private static void AddPersonToList(List<string> people)
