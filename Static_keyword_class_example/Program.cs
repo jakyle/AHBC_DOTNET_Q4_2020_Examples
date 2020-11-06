@@ -48,6 +48,20 @@ namespace Static_keyword_class_example
 
 
             Console.ReadLine();
+
+
+            // Grocery Store!!!!
+            var groceryStoreItems = new List<GroceryItemBase>();
+            groceryStoreItems.Add(new Milk());
+            groceryStoreItems.Add(new Bread());
+            groceryStoreItems.Add(new Steak());
+
+
+            foreach (var groceryStoreItem in groceryStoreItems)
+            {
+
+            }
+
         }
     }
 
@@ -88,4 +102,32 @@ namespace Static_keyword_class_example
         }
 
     }
+
+
+    public abstract class GroceryItemBase
+    {
+        public double Price { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Bread : GroceryItemBase
+    {
+        public bool IsWholeGrain { get; set; }
+    }
+
+    public class Milk : GroceryItemBase
+    {
+        public bool IsTwoPercent { get; set; }
+    }
+
+    public class Steak : GroceryItemBase
+    {
+        public bool IsRibEye { get; set; }
+    }
+
+    public class Egg : GroceryItemBase
+    {
+        public bool IsJumbo { get; set; }
+    }
+
 }
