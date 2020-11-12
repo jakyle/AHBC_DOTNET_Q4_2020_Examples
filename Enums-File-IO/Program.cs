@@ -47,7 +47,11 @@ namespace Enums_File_IO
         {
             switch (Genre)
             {
-                case Genre.Horror: return "OOOO Spoooky!";
+                case Genre.Horror:
+                    {
+                        Console.WriteLine(Genre);
+                        return "OOOO Spoooky!";
+                    }
                 case Genre.Comedy: return "lulz";
                 case Genre.Drama: return "oh my!";
                 case Genre.Action: return "daaaym";
