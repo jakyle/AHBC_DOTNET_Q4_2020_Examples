@@ -1,0 +1,1 @@
+var hobbies = document.getElementById("hobbies");

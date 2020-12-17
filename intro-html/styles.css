@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+* { 
+    font-family: 'Langar', cursive;
+    text-decoration: underline;
+}
+
+p {
+    color: pink;
+}
+
+
+li { 
+    color: red;
+    margin-left: 100px;
+}
+
+.text { 
+    color: green;
+}
+
+
+.header {
+    font-size: 72px;
+}
+
+#hobbies {
+    text-align: right; 
+    color: mediumaquamarine; 
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.container {
+    width: auto;
+    height: 50%;
+    
+    background-color: rgb(212, 182, 182);
+}

@@ -1,0 +1,69 @@
+body {
+    padding: 0; 
+    margin: 0;
+}
+
+.large-font {
+    font-size: 32px;
+}
+
+
+
+#container-one {
+    display: block;
+
+    background-color: yellow;
+}
+
+
+.container-inline {
+    display: inline;
+    width: auto;
+    margin-left: 0.2em;
+    background-color: aqua;
+}
+
+
+#header {
+    
+    width: 100%; 
+    height: 3em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color:khaki
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#last-item {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item { 
+    width: 32%;
+}
+
+.section { 
+    
+    width: 100%;
+
+    margin-bottom: 100px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    background-color: rgb(224, 198, 133);
+}
+
+.article {
+    width: 40%;
+}
