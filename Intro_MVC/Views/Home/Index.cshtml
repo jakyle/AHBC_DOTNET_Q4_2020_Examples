@@ -1,0 +1,22 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var name = "James";
+}
+
+@if (true)
+{
+    <h1>Sup dude!</h1>
+}
+else
+{
+    // do this;
+    <p>hi lol</p>
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Hey class, your instructors name is: @Model.FullName</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
