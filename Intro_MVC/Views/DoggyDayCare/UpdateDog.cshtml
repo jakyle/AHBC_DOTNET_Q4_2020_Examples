@@ -1,0 +1,16 @@
+﻿@model Intro_MVC.Models.DoggyDayCare.UpdateDogViewModel
+
+    <form asp-controller="DoggyDayCare" asp-action="UpdateResult" asp-route-name="@Model.OldDog.Name" method="post">
+
+
+        <label asp-for="OldDog.Name"></label>
+        current name:<p>@Model.OldDog.Name</p>
+        new name: <input asp-for="NewDog.Name" />
+
+        <label asp-for="OldDog.DayOfTheWeek"></label>
+        Current Day Of The Week:<p>@Model.OldDog.DayOfTheWeek</p>
+        New Day Of The Week: <input asp-for="NewDog.DayOfTheWeek" />
+
+        <button>Update Dog</button>
+
+    </form>

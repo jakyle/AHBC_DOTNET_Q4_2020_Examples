@@ -6,9 +6,15 @@
 
 @model Intro_MVC.Models.DoggyDayCare.FormResultViewModel
 
-
-<h1>Dog Name:</h1>
-<h2>@Model.DogName</h2>
-
-<h1>Day of the week:</h1>
-<h2>@Model.DayOfTheWeek</h2>
+<ul class="list-group">
+    @foreach (var dog in Model.Dogs)
+    {
+        <li class="list-group-item">
+            <p>Name: @dog.Name</p>
+            <p>Day of the week: @dog.DayOfTheWeek</p>
+            <a asp-controller="DoggyDayCare" asp-action="UpdateDog" asp-route-name="@dog.Name">Update Dog</a>
+            <br />
+            <a class="text-danger" asp-controller="DoggyDayCare" asp-action="DeleteDog" asp-route-name="@dog.Name">Delete Dog</a>
+        </li>
+    }
+</ul>

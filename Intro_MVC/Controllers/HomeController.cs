@@ -15,7 +15,7 @@ namespace Intro_MVC.Controllers
         }
 
         public IActionResult Index()
-            {
+        {
             var model = new IndexViewModel();
             model.FirstName = "James";
             model.LastName = "Jackson";
