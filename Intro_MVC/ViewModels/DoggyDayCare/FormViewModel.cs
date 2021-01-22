@@ -13,3 +13,11 @@ namespace Intro_MVC.Models.DoggyDayCare
         public string DogNameWithY => $"{DogName}y";
     }
 }
+
+
+
+
+// View -> Controller -> DAl (Data Access Layer)
+
+// View + 2 props,        Business, -1, +5,       +- 0
+// MVC ->          <->   Business Layer  <-> (Data Access Layer)

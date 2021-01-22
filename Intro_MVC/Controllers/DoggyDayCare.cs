@@ -29,17 +29,12 @@ namespace Intro_MVC.Controllers
 
             _doggyDayCare.Dogs.Add(dog);
 
-            var viewModel = new FormResultViewModel();
-            viewModel.Dogs = _doggyDayCare.Dogs;
-            // do some math and shit 
-            return View(viewModel);
+            return FormResultView();
         }
 
         public IActionResult UpdateDog(string name)
         {
-            var dog = _doggyDayCare.Dogs
-                .Where(dog => dog.Name == name)
-                .FirstOrDefault();
+            var dog = GetDogWhereNameIsFirstOrDefault(name);
 
             var model = new UpdateDogViewModel();
             model.OldDog = dog;
@@ -49,27 +44,32 @@ namespace Intro_MVC.Controllers
 
         public IActionResult UpdateResult(UpdateDogViewModel model, string name)
         {
-            var dog = _doggyDayCare.Dogs
-                .Where(dog => dog.Name == name)
-                .FirstOrDefault();
+            var dog = GetDogWhereNameIsFirstOrDefault(name);
 
             dog.Name = model.NewDog.Name;
             dog.DayOfTheWeek = model.NewDog.DayOfTheWeek;
 
-            var viewModel = new FormResultViewModel();
-            viewModel.Dogs = _doggyDayCare.Dogs;
-
-            return View("FormResult", viewModel);
+            return FormResultView();
         }
 
         public IActionResult DeleteDog(string name)
         {
-            var dog = _doggyDayCare.Dogs
-                .Where(dog => dog.Name == name)
-                .FirstOrDefault();
+            var dog = GetDogWhereNameIsFirstOrDefault(name);
 
             _doggyDayCare.Dogs.Remove(dog);
 
+            return FormResultView();
+        }
+
+        private Dog GetDogWhereNameIsFirstOrDefault(string name)
+        {
+            return _doggyDayCare.Dogs
+                .Where(dog => dog.Name == name)
+                .FirstOrDefault();
+        }
+
+        private IActionResult FormResultView()
+        {
             var viewModel = new FormResultViewModel();
             viewModel.Dogs = _doggyDayCare.Dogs;
 
