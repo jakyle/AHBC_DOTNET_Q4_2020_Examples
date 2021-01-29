@@ -9,7 +9,6 @@ namespace Intro_MVC.Models.DoggyDayCare
     {
         public string DogName { get; set; }
         public string DayOfTheWeek { get; set; }
-
         public string DogNameWithY => $"{DogName}y";
     }
 }
@@ -20,4 +19,4 @@ namespace Intro_MVC.Models.DoggyDayCare
 // View -> Controller -> DAl (Data Access Layer)
 
 // View + 2 props,        Business, -1, +5,       +- 0
-// MVC ->          <->   Business Layer  <-> (Data Access Layer)
+// MVC ->          <->   Business Layer  <-> (Data Access Layer)https://pbs.twimg.com/media/EsTH5sUW8AIdB6j.jpg-:large

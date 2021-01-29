@@ -4,9 +4,9 @@ namespace Intro_MVC.Services
 {
     public class DoggyDayCare : IDoggyDayCare
     {
-        public List<Dog> Dogs { get; } = new List<Dog>();
+        public List<DogViewModel> Dogs { get; } = new List<DogViewModel>();
 
-        public bool CanPlayWithOtherDogs(Dog dog)
+        public bool CanPlayWithOtherDogs(DogViewModel dog)
         {
             return true;
         }

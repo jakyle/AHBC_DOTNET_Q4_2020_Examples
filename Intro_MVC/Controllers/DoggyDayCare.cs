@@ -1,7 +1,7 @@
-﻿using Intro_MVC.Models.DoggyDayCare;
+﻿using Intro_MVC.DALModels;
+using Intro_MVC.Models.DoggyDayCare;
 using Intro_MVC.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Intro_MVC.Controllers
@@ -9,10 +9,12 @@ namespace Intro_MVC.Controllers
     public class DoggyDayCareController : Controller
     {
         private readonly IDoggyDayCare _doggyDayCare;
+        private readonly DoggyDayCareContext _doggyDayCareContext;
 
-        public DoggyDayCareController(IDoggyDayCare doggyDayCare)
+        public DoggyDayCareController(IDoggyDayCare doggyDayCare, DoggyDayCareContext doggyDayCareContext)
         {
             _doggyDayCare = doggyDayCare;
+            _doggyDayCareContext = doggyDayCareContext;
         }
 
         // localhost:5001/DoggyDayCare/Form
@@ -23,18 +25,21 @@ namespace Intro_MVC.Controllers
         
         public IActionResult FormResult(FormViewModel model)
         {
-            var dog = new Dog();
+            var dog = new DogDAL();
             dog.Name = model.DogName;
             dog.DayOfTheWeek = model.DayOfTheWeek;
 
-            _doggyDayCare.Dogs.Add(dog);
+            _doggyDayCareContext.Dogs.Add(dog);
+            _doggyDayCareContext.SaveChanges();
+
+            // _doggyDayCare.Dogs.Add(dog);
 
             return FormResultView();
         }
 
-        public IActionResult UpdateDog(string name)
+        public IActionResult UpdateDog(int id)
         {
-            var dog = GetDogWhereNameIsFirstOrDefault(name);
+            var dog = GetDogWhereIdIsFirstOrDefault(id);
 
             var model = new UpdateDogViewModel();
             model.OldDog = dog;
@@ -42,36 +47,71 @@ namespace Intro_MVC.Controllers
             return View(model);
         }
 
-        public IActionResult UpdateResult(UpdateDogViewModel model, string name)
+        public IActionResult UpdateResult(UpdateDogViewModel model, int id)
         {
-            var dog = GetDogWhereNameIsFirstOrDefault(name);
+            var dog = GetDogWhereIdIsFirstOrDefault(id);
 
-            dog.Name = model.NewDog.Name;
-            dog.DayOfTheWeek = model.NewDog.DayOfTheWeek;
+            var dogDAL = _doggyDayCareContext
+                .Dogs
+                .FirstOrDefault(dogDal => dogDal.DogID == dog.ID);
+
+            dogDAL.Name = model.NewDog.Name;
+            dogDAL.DayOfTheWeek = model.NewDog.DayOfTheWeek;
+
+            _doggyDayCareContext.SaveChanges();
 
             return FormResultView();
         }
 
-        public IActionResult DeleteDog(string name)
+        public IActionResult DeleteDog(int id)
         {
-            var dog = GetDogWhereNameIsFirstOrDefault(name);
+            var dog = GetDogWhereIdIsFirstOrDefault(id);
 
-            _doggyDayCare.Dogs.Remove(dog);
+            var dogDAL = _doggyDayCareContext
+               .Dogs
+               .FirstOrDefault(dogDal => dogDal.DogID == dog.ID);
+
+            _doggyDayCareContext.Dogs.Remove(dogDAL);
+
+            _doggyDayCareContext.SaveChanges();
 
             return FormResultView();
         }
 
-        private Dog GetDogWhereNameIsFirstOrDefault(string name)
+        private DogViewModel GetDogWhereIdIsFirstOrDefault(int id)
         {
-            return _doggyDayCare.Dogs
-                .Where(dog => dog.Name == name)
+            DogDAL dogDAL = _doggyDayCareContext.Dogs
+                .Where(dog => dog.DogID == id)
                 .FirstOrDefault();
+
+            // will create error page later
+            //if (dogDAL != null)
+            //{
+
+            //}
+
+            var dog = new DogViewModel();
+            dog.ID = dogDAL.DogID;
+            dog.Name = dogDAL.Name;
+            dog.DayOfTheWeek = dogDAL.DayOfTheWeek;
+            return dog;
         }
 
         private IActionResult FormResultView()
         {
+            //  Dog View           DogDAL
+            // View Layer <====> Data Acess Layer
+
             var viewModel = new FormResultViewModel();
-            viewModel.Dogs = _doggyDayCare.Dogs;
+
+            var dogs = _doggyDayCareContext.Dogs.ToList();
+            
+            // Mapping DogDAL to dog View
+            var dogsViewModelList = dogs
+                .Select(dogDal => new DogViewModel() { Name = dogDal.Name, DayOfTheWeek = dogDal.DayOfTheWeek, ID = dogDal.DogID })
+                .ToList();
+
+            viewModel.Dogs = dogsViewModelList;
 
             return View("FormResult", viewModel);
         }

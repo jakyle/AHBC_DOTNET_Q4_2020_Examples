@@ -9,7 +9,7 @@ namespace Intro_MVC.Models.DoggyDayCare
 {
     public class FormResultViewModel
     {
-        public List<Dog> Dogs { get; set; }
+        public List<DogViewModel> Dogs { get; set; }
     }
     
 }

@@ -8,7 +8,7 @@ namespace Intro_MVC.Models.DoggyDayCare
 {
     public class UpdateDogViewModel
     {
-        public Dog OldDog { get; set; }
-        public Dog NewDog { get; set; }
+        public DogViewModel OldDog { get; set; }
+        public DogViewModel NewDog { get; set; }
     }
 }

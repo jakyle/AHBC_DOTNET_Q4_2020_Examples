@@ -12,9 +12,9 @@
         <li class="list-group-item">
             <p>Name: @dog.Name</p>
             <p>Day of the week: @dog.DayOfTheWeek</p>
-            <a asp-controller="DoggyDayCare" asp-action="UpdateDog" asp-route-name="@dog.Name">Update Dog</a>
+            <a asp-controller="DoggyDayCare" asp-action="UpdateDog" asp-route-id="@dog.ID">Update Dog</a>
             <br />
-            <a class="text-danger" asp-controller="DoggyDayCare" asp-action="DeleteDog" asp-route-name="@dog.Name">Delete Dog</a>
+            <a class="text-danger" asp-controller="DoggyDayCare" asp-action="DeleteDog" asp-route-id="@dog.ID">Delete Dog</a>
         </li>
     }
 </ul>

@@ -7,7 +7,7 @@ namespace Intro_MVC.Services
 {
     public interface IDoggyDayCare
     {
-        bool CanPlayWithOtherDogs(Dog dog);
-        List<Dog> Dogs { get; }
+        bool CanPlayWithOtherDogs(DogViewModel dog);
+        List<DogViewModel> Dogs { get; }
     }
 }

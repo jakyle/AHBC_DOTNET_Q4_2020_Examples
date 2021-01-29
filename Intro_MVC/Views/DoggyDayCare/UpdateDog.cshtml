@@ -1,6 +1,6 @@
 ﻿@model Intro_MVC.Models.DoggyDayCare.UpdateDogViewModel
 
-    <form asp-controller="DoggyDayCare" asp-action="UpdateResult" asp-route-name="@Model.OldDog.Name" method="post">
+    <form asp-controller="DoggyDayCare" asp-action="UpdateResult" asp-route-id="@Model.OldDog.ID" method="post">
 
 
         <label asp-for="OldDog.Name"></label>
