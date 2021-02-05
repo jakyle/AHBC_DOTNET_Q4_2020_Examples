@@ -1,6 +1,7 @@
 using Intro_MVC.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,8 +29,18 @@ namespace Intro_MVC
                 var connectionString = Configuration.GetConnectionString("DefaultConnection");
                 options.UseSqlServer(connectionString);
             });
-            
+
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            { 
+                options.SignIn.RequireConfirmedAccount = false;
+
+
+                options.Password.RequireDigit = true;
+
+            }).AddEntityFrameworkStores<DoggyDayCareContext>();
+
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // middleware
@@ -52,6 +63,8 @@ namespace Intro_MVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -59,6 +72,7 @@ namespace Intro_MVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}");
+                endpoints.MapRazorPages();
             });
         }
     }
