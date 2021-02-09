@@ -1,0 +1,11 @@
+﻿@model AddMovieResultViewModel
+
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>
+                <h3>Movie Name: @movie.MovieName</h3>
+                <h3>Movie Genre: @movie.MovieGenre</h3>
+            </li>
+        }
+    </ul>

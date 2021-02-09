@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.AddMovieViewModel
+
+<form asp-controller="Movie" asp-action="AddMovieResult" method="post">
+    <label asp-for="Movie.MovieName"></label>
+    <input asp-for="Movie.MovieName" />
+
+    <label asp-for="Movie.MovieGenre"></label>
+    <input asp-for="Movie.MovieGenre" />
+
+    <button>Add Movie</button>
+</form>
