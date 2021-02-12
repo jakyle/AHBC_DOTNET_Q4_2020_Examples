@@ -1,0 +1,11 @@
+﻿@model Api_intro.Models.ViewModels.PrivacyViewModel
+
+<ul>
+    @foreach (var quote in Model.Quotes)
+    {
+        <li>
+            <h4>@quote.Quote</h4>
+            <img src="@quote.ImageUrl"/>
+        </li>
+    }
+</ul>

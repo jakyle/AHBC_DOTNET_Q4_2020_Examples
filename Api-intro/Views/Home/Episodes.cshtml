@@ -1,0 +1,23 @@
+﻿@model Api_intro.Models.ViewModels.EpisodesViewModel
+
+<ul>
+    @foreach (var episode in Model.Episodes)
+    {
+        <li>
+            <h2>@episode.Name</h2>
+            <img src="@episode.ImageUrl" />
+            
+            <h2>characters</h2>
+            <ul>
+                @foreach (var character in episode.Characters)
+                {
+                    <li>
+                        <a asp-controller="Home" asp-action="Character" asp-route-id="@character.Split('/').Last()">@character.Split('/').Last()</a>
+                    </li>
+                }
+            </ul>
+        </li>
+        
+       
+    }
+</ul>

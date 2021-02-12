@@ -1,0 +1,14 @@
+﻿@model Api_intro.Models.ViewModels.CharacterViewModel
+
+<div class="container">
+    <h1>Name: @Model.Name</h1>
+    <h1>Status: @Model.Status</h1>
+    <h1>Species: @Model.Species</h1>
+    <ul>
+        @foreach (var ability in Model.Abilities)
+        {
+            <li>@ability</li>
+        }
+    </ul>
+    <img src="@Model.ImageUrl" />
+</div>
